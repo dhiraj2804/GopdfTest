@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"math"
-	globals "practice/gopdf/GopdfTest/global"
+	globals "practice/GopdfTest/global"
 	"strings"
 	"time"
 
@@ -117,7 +117,7 @@ func main() {
 				CGST:               2.5,
 				Count:              1,
 				CurrentPrice:       10,
-				HsnCode:            "",
+				HsnCode:            "234321",
 				Images:             "",
 				Mrp:                10,
 				Name:               "Hide & Seek",
@@ -130,7 +130,7 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "123456",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -143,7 +143,7 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "789067",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -156,7 +156,20 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "dhriaj",
+				Images:             "",
+				Mrp:                500,
+				Name:               "MRF Bat",
+				Price:              1000,
+				ProductDescription: "MRF Bat",
+				SGST:               9,
+				Sku:                "BAT01",
+			},
+			{
+				CGST:               9,
+				Count:              2,
+				CurrentPrice:       500,
+				HsnCode:            "dhriaj",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -168,7 +181,20 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "dhriaj",
+				Images:             "",
+				Mrp:                500,
+				Name:               "MRF Bat",
+				Price:              1000,
+				ProductDescription: "MRF Bat",
+				SGST:               9,
+				Sku:                "BAT01",
+			},
+			{
+				CGST:               9,
+				Count:              2,
+				CurrentPrice:       500,
+				HsnCode:            "987654",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -180,7 +206,7 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "242424",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -192,7 +218,7 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "878787",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -204,7 +230,7 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "123241",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -216,7 +242,7 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "111111",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -228,7 +254,7 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "877878",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -240,7 +266,7 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "655656",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -252,7 +278,19 @@ func main() {
 				CGST:               9,
 				Count:              2,
 				CurrentPrice:       500,
-				HsnCode:            "",
+				HsnCode:            "898989",
+				Images:             "",
+				Mrp:                500,
+				Name:               "MRF Bat",
+				Price:              1000,
+				ProductDescription: "MRF Bat",
+				SGST:               9,
+				Sku:                "BAT01",
+			}, {
+				CGST:               9,
+				Count:              2,
+				CurrentPrice:       500,
+				HsnCode:            "909090",
 				Images:             "",
 				Mrp:                500,
 				Name:               "MRF Bat",
@@ -330,7 +368,7 @@ func main() {
 		return
 	}
 
-	pdf.Image("./view/logo.png", leftMargin, 30, nil)
+	//pdf.Image("./view/logo.png", leftMargin, 10, nil)
 	// logo column
 	pdf.SetX(curX) //move current location
 	pdf.SetY(curY)
@@ -452,10 +490,11 @@ func main() {
 	pdf.SetX(customerX)
 	pdf.SetY(customerY)
 	err = pdf.SetFont("roboto_bold", "", 8)
-	pdf.Cell(nil, fmt.Sprintf("Customer Name: %s", res.CustomerName))
+	pdf.Cell(nil, fmt.Sprintf("Customer Name:"))
 	err = pdf.SetFont("roboto_normal", "", 8)
 	pdf.SetX(curX + 65)
-	pdf.Cell(nil, fmt.Sprintf("%s", res.CustomerName))
+	dhiraj := "dhiraj kumar"
+	pdf.Cell(nil, fmt.Sprintf("%s", dhiraj))
 
 	customerY += 10
 
@@ -510,7 +549,7 @@ func main() {
 
 			pdf.SetX(curX) //move current location
 			pdf.SetY(curY)
-			pdf.Cell(nil, fmt.Sprintf("%s", strings.Join(currLen, "")))
+			pdf.Cell(nil, strings.Join(currLen, ""))
 			customerY += 10
 			width = width - float64(len(strings.Join(currLen, "")))
 			break
@@ -533,12 +572,13 @@ func main() {
 	// products table
 	pdf.SetLineWidth(0.2)
 	pdf.SetLineType("solid")
-	//pdf.SetLineType("dotted")
+	//pdf.SetLineType("dotted")prodVert
+	prodVert := curY
 	pdf.Line(leftMargin, curY, pageWindth-leftMargin, curY)
 	curY += 10
 	curX = leftMargin
 
-	slnoX := curX
+	slnoX := curX + 2
 	//sl.no
 	pdf.SetX(slnoX)
 	pdf.SetY(curY)
@@ -594,7 +634,7 @@ func main() {
 	pdf.SetY(curY)
 	pdf.Cell(nil, "CGST") // 50
 	cgstperX := curX - 20
-	cgstperY := curY + 20
+	cgstperY := curY + 22
 
 	pdf.SetX(cgstperX)
 	pdf.SetY(cgstperY)
@@ -612,7 +652,7 @@ func main() {
 	pdf.SetY(curY)
 	pdf.Cell(nil, "SGST") // 50
 	sgstperX := curX - 15
-	sgstperY := curY + 20
+	sgstperY := curY + 22
 
 	pdf.SetX(sgstperX)
 	pdf.SetY(sgstperY)
@@ -633,6 +673,9 @@ func main() {
 	pdf.SetX(totalX)
 	pdf.SetY(curY + 10)
 	pdf.Cell(nil, "Amt") // 50
+
+	Cgsty := curY + 18
+	pdf.Line(cgstperX-2, Cgsty, totalX-3, curY+18)
 
 	maxY := math.Max(sgstperY, cgstperY) + 10
 	pdf.Line(leftMargin, maxY, pageWindth-leftMargin, maxY)
@@ -662,15 +705,19 @@ func main() {
 		sgstper = res.Products[i].SGST
 		sgstamt = taxableAmt * float64(sgstper/100)
 		totalamt = taxableAmt + cgstamt + sgstamt
+
+		//sl.no
 		pdf.SetX(slnoX)
 		pdf.SetY(curY)
 		pdf.Cell(nil, fmt.Sprintf("%d", i+1)) // 15
 
+		//hsn code
 		pdf.SetX(hsncodeX)
 		pdf.SetY(curY)
 		pdf.Cell(nil, fmt.Sprintf("%s", res.Products[i].HsnCode)) // 25
 
-		pdf.SetX(prodnameX - 60)
+		//prodname
+		pdf.SetX(prodnameX - 65)
 		pdf.SetY(curY)
 		pdf.Cell(nil, fmt.Sprintf("%s", res.Products[i].Name)) // 300
 
@@ -726,9 +773,49 @@ func main() {
 
 	//GST Summary
 	//pdf.Line(leftMargin+30, curY+15, sgstperX, curY+15)
+
+	//SL no vertical line
+	pdf.Line(leftMargin, prodVert, leftMargin, curY+10-tableGap)
+
+	//HSN vertical line
+	pdf.Line(hsncodeX-2, prodVert, hsncodeX-2, curY+10-tableGap)
+
+	//Prod vertical line
+	pdf.Line(hsncodeX+40, prodVert, hsncodeX+40, curY+10-tableGap)
+
+	//Qty vertical line
+	pdf.Line(qtyX-2, prodVert, qtyX-2, curY+10-tableGap)
+
+	//mrp vertical line
+	pdf.Line(mrpX-2, prodVert, mrpX-2, curY+10-tableGap)
+
+	//rate vertical line
+	pdf.Line(rateX-2, prodVert, rateX-2, curY+10-tableGap)
+
+	//Taxable Amount vertical line
+	pdf.Line(taxableX-2, prodVert, taxableX-2, curY+10-tableGap)
+
+	//CGST per  vertical line
+	pdf.Line(cgstperX-2, prodVert, cgstperX-2, curY+10-tableGap)
+
+	//CGST Amt  vertical line
+	pdf.Line(cgstamtX-2, Cgsty, cgstamtX-2, curY+10-tableGap)
+
+	//SGST per  vertical line
+	pdf.Line(sgstperX-2, prodVert, sgstperX-2, curY+10-tableGap)
+
+	//SGST Amt  vertical line
+	pdf.Line(sgstamtX-2, Cgsty, sgstamtX-2, curY+10-tableGap)
+
+	//total Amt  vertical line
+	pdf.Line(totalX-3, prodVert, totalX-3, curY+10-tableGap)
+
+	//last  vertical line
+	pdf.Line(pageWindth-leftMargin, prodVert, pageWindth-leftMargin, curY+10-tableGap)
+
 	curY += 40
 	curX = leftMargin
-
+	GstSumY := curY
 	//Populate value in GST Summary
 
 	gstSumX := curX + 30
@@ -766,11 +853,15 @@ func main() {
 	pdf.Cell(nil, "Taxable Amt") // 100
 	sgsttaxSumX := sgstSumX + 30
 
-	pdf.SetX(sgsttaxSumX)
+	pdf.SetX(sgsttaxSumX - 10)
 	pdf.SetY(curY + 15)
 	pdf.Cell(nil, "Tax Amt") // 100
-	pdf.Line(gstSumX-20, curY+10, sgsttaxSumX+30, curY+10)
-	pdf.Line(gstSumX-20, curY+30, sgsttaxSumX+30, curY+30)
+	gstSumTopLineStartX := gstSumX - 5
+	gstSumTopLineEndX := sgsttaxSumX + 30
+	gstSumMidLineY := curY + 10
+	pdf.Line(gstSumTopLineStartX, GstSumY-5, gstSumTopLineEndX, GstSumY-5)
+	pdf.Line(cgsttaxableSumX-5, gstSumMidLineY, gstSumTopLineEndX, curY+10)
+	pdf.Line(gstSumTopLineStartX, curY+30, gstSumTopLineEndX, curY+30)
 
 	//pdf.Line(leftMargin+50, curY+40, 470, curY+40)
 
@@ -787,26 +878,42 @@ func main() {
 
 		pdf.SetX(gstSumX)
 		pdf.SetY(curY + 5)
-		pdf.Cell(nil, fmt.Sprintf("%0.2f%s", cgstper+sgstper, "%")) // 150
+		pdf.Cell(nil, fmt.Sprintf("%0.2f%s", cgstper, "%")) // 150
 
-		pdf.SetX(cgsttaxableSumX)
+		pdf.SetX(cgsttaxableSumX + 5)
 		pdf.SetY(curY + 5)
 		pdf.Cell(nil, fmt.Sprintf("%0.2f", taxableAmt)) // 100
 
-		pdf.SetX(cgsttaxamtSumX)
+		pdf.SetX(cgsttaxamtSumX + 5)
 		pdf.SetY(curY + 5)
 		pdf.Cell(nil, fmt.Sprintf("%0.2f", cgstamt)) // 100
 
-		pdf.SetX(sgsttaxableSumX)
+		pdf.SetX(sgsttaxableSumX + 5)
 		pdf.SetY(curY + 5)
 		pdf.Cell(nil, fmt.Sprintf("%0.2f", taxableAmt)) // 100
 
-		pdf.SetX(sgsttaxSumX)
+		pdf.SetX(sgsttaxSumX - 10)
 		pdf.SetY(curY + 5)
 		pdf.Cell(nil, fmt.Sprintf("%0.2f", sgstamt)) // 100
 		curY += 15
-		pdf.Line(gstSumX-20, curY, sgsttaxSumX+30, curY)
+		pdf.Line(gstSumX-5, curY, sgsttaxSumX+30, curY)
 	}
+
+	// vertical line
+
+	//leftmargin vertical line
+	pdf.Line(gstSumTopLineStartX, GstSumY-5, gstSumTopLineStartX, curY)
+
+	pdf.Line(cgsttaxableSumX-5, GstSumY-5, cgsttaxableSumX-5, curY)
+
+	pdf.Line(cgsttaxamtSumX-5, gstSumMidLineY, cgsttaxamtSumX-5, curY)
+
+	pdf.Line(sgsttaxableSumX-5, GstSumY-5, sgsttaxableSumX-5, curY)
+
+	pdf.Line(sgsttaxSumX-20, gstSumMidLineY, sgsttaxSumX-20, curY)
+
+	pdf.Line(sgsttaxSumX+30, GstSumY-5, sgsttaxSumX+30, curY)
+
 	curY += 10
 
 	// total summary
